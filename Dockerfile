@@ -7,16 +7,12 @@ WORKDIR /src/app
 COPY ./package*.json .
 
 RUN npm install
-RUN npm install -g typescript
-RUN chmod a+x node_modules/.bin/tsc
-RUN npm install concurrently
-RUN npm install stripe
 
 COPY . .
 
 RUN npx tsc
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "start"]
 
 EXPOSE 7000
 
